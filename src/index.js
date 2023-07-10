@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -15,3 +15,39 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+*/
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
+import Login from './Login.js';
+import Users from './Users.js';
+import Home from './Home.js';
+import Navbar from './Navbar.js';
+
+const NavbarWrapper = () => {
+  const location = useLocation();
+  const isLoginPage = (location.pathname === '/' || location.pathname === '/login');
+  console.log(location);
+  return (
+    <>
+      {!isLoginPage && <Navbar />}
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </>
+  );
+}
+const App = () => {
+  return (
+    <Router>
+      <NavbarWrapper />
+    </Router>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(  <App/>);
+

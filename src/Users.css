@@ -1,0 +1,35 @@
+.home-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  th,
+  td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  th {
+    background-color: orange;
+    color: #fff;
+  }
+  
+  tr:hover {
+    background-color: #f6f6f6;
+  }
+  .p-img{
+    border-radius: 50% 
+  }
